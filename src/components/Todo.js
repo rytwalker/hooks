@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Todo = props => {
   const [todoName, setTodoName] = useState('');
   const [todoList, setTodoList] = useState([]);
+  //   useEffect(() => {
+  //     axios
+  //       .get('url')
+  //       .then(res => console.log(res.data))
+  //       .catch(err => console.dir(err));
+  //   });
 
   // useState object
   //   const [todoState, setTodoState] = useState({ userInput: '', todoList: [] });
@@ -21,6 +27,7 @@ const Todo = props => {
     //   userInput: todoState.userInput,
     //   todoList: todoState.todoList.concat(todoState.userInput)
     // });
+    localStorage.setItem('todos', JSON.stringify(todoList));
   };
 
   return (
